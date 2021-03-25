@@ -1,0 +1,14 @@
+  view1.isFocusableInTouchMode = true;
+        view1.requestFocus();
+
+        view1.setOnKeyListener(object : View.OnKeyListener {
+            override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
+                if (event.action == KeyEvent.ACTION_DOWN) {
+                    if (keyCode == KeyEvent.KEYCODE_BACK) {
+                        Navigation.findNavController(view1).navigate(R.id.splashFragment)
+                        return true
+                    }
+                }
+                return false
+            }
+        })
